@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <title>مدير المهام 9</title>
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/task.css">
+    <link rel="stylesheet" href="CSS/priority.css">
+    <link rel="stylesheet" href="CSS/progressStats.css">
+    <link rel="stylesheet" href="CSS/theme.css">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="side-column">
+
+            <!-- 1️⃣ إدخال المهمة -->
+            <section class="task-section input-section">
+                <div class="task-input">
+                    <input type="text" id="taskInput" placeholder="اكتب مهمة جديدة">
+
+                    <div class="priority-picker priority-picker__create">
+                        <div class="priority-picker__trigger" data-value="medium">
+                            <span class="priority-picker__dot"></span>
+                            <span class="priority-picker__text">متوسطة</span>
+                        </div>
+                        <div class="priority-picker__options">
+                            <button class="priority-picker__option" data-value="low">
+                                <span class="priority-picker__dot"></span>
+                                <span class="priority-picker__text">منخفضة</span>
+                            </button>
+                            <button class="priority-picker__option" data-value="medium">
+                                <span class="priority-picker__dot"></span>
+                                <span class="priority-picker__text">متوسطة</span>
+                            </button>
+                            <button class="priority-picker__option" data-value="high">
+                                <span class="priority-picker__dot"></span>
+                                <span class="priority-picker__text">عالية</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button id="add-task-btn">إضافة</button>
+                </div>
+            </section>
+
+            <!-- 2️⃣ الإحصائيات -->
+            <section class="task-summary">
+                <div class="task-summary__progress">
+                    <svg class="task-summary__chart" width="90" height="90" viewBox="0 0 90 90">
+                        <circle class="task-summary__track" cx="45" cy="45" r="40"></circle>
+
+                        <circle class="task-summary__value" cx="45" cy="45" r="40"></circle>
+                    </svg>
+
+                    <output class="task-summary__percentage">
+                        0%
+                    </output>
+                </div>
+
+                <div class="task-summary__count">
+                    <span class="task-summary__total">0</span>
+                    <span class="task-summary__separator">/</span>
+                    <span class="task-summary__completed">0</span>
+                </div>
+            </section>
+
+            <button class="theme-toggle">🌙</button>
+
+        </div>
+
+        <!-- 3️⃣ قائمة المهام -->
+        <section class="tasks-section list-section">
+            <ul id="main-list"></ul>
+        </section>
+
+    </div>
+    <script type="module" src="JS/main.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- 
+<section class="task-summary" aria-label="Task completion summary">
+    <div class="task-summary__progress" aria-label="Task completion percentage">
+        <svg class="task-summary__chart" width="90" height="90" viewBox="0 0 90 90" role="img"
+            aria-labelledby="completionPercentage">
+            <circle class="task-summary__track" cx="45" cy="45" r="40"></circle>
+
+            <circle class="task-summary__value" cx="45" cy="45" r="40"></circle>
+        </svg>
+
+        <output class="task-summary__percentage" id="completionPercentage">
+            0%
+        </output>
+    </div>
+
+    <div class="task-summary__count">
+        <span class="task-summary__total" id="totalTasks">0</span>
+        <span class="task-summary__separator">/</span>
+        <span class="task-summary__completed" id="completedTasks">0</span>
+    </div>
+</section> -->

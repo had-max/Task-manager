@@ -1,0 +1,124 @@
+.task-summary {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+
+/* =========================
+   Progress Circle
+   ========================= */
+
+.task-summary__progress {
+    position: relative;
+    width: 90px;
+    height: 90px;
+}
+
+.task-summary__chart {
+    display: block;
+    transform: rotate(-90deg);
+}
+
+.task-summary__chart circle {
+    fill: none;
+    stroke-width: 8;
+}
+
+.task-summary__track {
+    stroke: var(--track);
+}
+
+.task-summary__value {
+    stroke: #27ae60;
+    stroke-linecap: round;
+
+    stroke-dasharray: 251;
+    stroke-dashoffset: 251;
+
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+
+/* =========================
+   Percentage
+   ========================= */
+
+.task-summary__percentage {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+
+/* =========================
+   Tasks Count
+   ========================= */
+
+.task-summary__count {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    margin: 0;
+
+    font-weight: bold;
+    line-height: 1;
+    color: var(--text);
+}
+
+/* Total */
+
+.task-summary__total {
+    position: relative;
+
+    font-size: 28px;
+    transform: translate(4px, -12px);
+}
+
+
+/* Separator */
+
+.task-summary__separator {
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+
+/* Completed */
+
+.task-summary__completed {
+    position: relative;
+
+    font-size: 28px;
+    transform: translate(-4px, 12px);
+    color: #27ae60;
+}
+
+
+/* =========================
+   Accessibility
+   ========================= */
+
+/* .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+
+    border: 0;
+} */

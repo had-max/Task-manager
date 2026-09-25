@@ -1,0 +1,242 @@
+/* ------------------ Lists --------------------- */
+
+ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    list-style: none;
+}
+
+#main-list {
+    padding-right: 0;
+    gap: 1.2rem;
+}
+
+.sub-list {
+    padding-right: 3rem;
+    display: none;
+    gap: 0.6rem;
+}
+
+.sub-list.display {
+    display: flex;
+}
+
+/* --------------------------------------------- */
+
+/* ظهور تدريجي لطيف عند إضافة مهمة جديدة (لا يغيّر أي شكل، فقط انتقال بصري) */
+@keyframes task-enter {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task {
+    animation: task-enter 0.25s ease;
+}
+
+
+/* ------------------ Tasks -------------------- */
+
+.task {
+    background: var(--card);
+    border-radius: 12px;
+    /* padding: 12px 14px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: .6rem;
+    transition: 0.3s;
+    cursor: grab;
+}
+
+
+.task:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* نص المهمة */
+.task .task-text {
+    /* font-size: 15px; */
+    color: var(--color);
+    max-width: 260px;
+    word-break: break-word;
+}
+
+.task.done {
+    opacity: 0.5;
+}
+
+/* مهمة مكتملة */
+.task.done .task-text {
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+.task:active {
+    cursor: grabbing;
+}
+
+.task.done {
+    word-break: break-word;
+    opacity: .5;
+}
+
+/* --------------------------------------------- */
+
+
+
+
+/* --------------- Task Headers --------------- */
+
+.task-header {
+    width: 100%;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    position: relative;
+}
+
+.task-header:hover {
+    .add-sub-task {
+        opacity: 1;
+    }
+}
+
+.task-header.open {
+    border-bottom-right-radius: 0;
+}
+
+/* ألوان الأولوية */
+.task-header.low {
+    border-left: 6px solid #2ecc71;
+}
+
+.task-header.medium {
+    border-left: 6px solid #f1c40f;
+}
+
+.task-header.high {
+    border-left: 6px solid #e74c3c;
+}
+
+
+
+/* ----------------- Task text ---------------- */
+
+.task-header .task-text {
+    font-weight: 800;
+}
+
+.task-header .task-text input {
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--text);
+    font-size: 1.25rem;
+    font-weight: 800;
+    font-family: inherit;
+    padding: 2px 0;
+    /* caret-color: var(--accent); */
+}
+
+.task-header .task-text input:focus {
+    outline: none;
+    border-bottom: 3px solid var(--accent);
+}
+
+/* --------------------------------------------- */
+
+/* .sub-task {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    position: relative;
+}
+
+.sub-task .task-header::before {
+    content: "";
+    width: 25px;
+    height: calc(100% + 1.2rem);
+    border: 1px solid #fff;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    position: absolute;
+    top: calc(0% - .6rem);
+    left: 100%;
+}
+
+.sub-task .task-header::after {
+    content: "";
+    width: 25px;
+    height: 50%;
+    border: 1px solid #fff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    font-size: 3rem;
+}
+
+.sub-task::marker {
+    font-size: 25px;
+    background: var(--card);
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.sub-task.done {
+    word-break: break-word;
+    opacity: .5;
+} */
+
+/* --------------- Add Sub-Item --------------- */
+
+.add-sub-task {
+    width: 75px;
+    height: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    color: var(--text);
+    font-size: 13px;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+    z-index: 1;
+}
+
+.add-sub-task:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+
+/* --------------------------------------------- */
+
+
+/* --------------------------------------------- */

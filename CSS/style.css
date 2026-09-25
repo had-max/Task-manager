@@ -1,0 +1,155 @@
+.task-section {
+    padding: 18px;
+    border-radius: var(--radius-lg);
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+.task-section:not(:last-child) {
+    box-shadow: var(--shadow-sm);
+}
+
+/* إدخال المهمة */
+.input-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: input;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.03), transparent);
+}
+
+/* الإحصائيات */
+.stats-section {
+    display: flex;
+    justify-content: center;
+    grid-area: stats;
+}
+
+.input-section,
+.stats-section {
+    height: 200px;
+    width: 100%;
+}
+
+.side-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+
+/* قائمة المهام */
+.list-section {
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.list-section::-webkit-scrollbar {
+    width: 6px;
+}
+
+.list-section::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 6px;
+}
+
+/* حالة عدم وجود مهام: رسالة لطيفة بدل قائمة فارغة صامتة */
+#main-list:empty::before {
+    content: "لا توجد مهام بعد — أضف مهمتك الأولى ✨";
+    display: block;
+    text-align: center;
+    padding: 40px 12px;
+    color: var(--color);
+    opacity: 0.55;
+    font-size: 15px;
+}
+
+/* العنوان */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+/* إدخال المهام */
+.task-input {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem 1rem;
+}
+
+.task-input input {
+    width: 100%;
+    padding: 18px 14px;
+    border-radius: var(--radius-md);
+    border-width: 1px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.task-input input::placeholder {
+    color: var(--text);
+    opacity: 0.45;
+}
+
+.task-input input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* زر الإضافة */
+.task-input #add-task-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.task-input #add-task-btn:hover {
+    background: var(--accent-hover);
+    box-shadow: var(--shadow-sm);
+}
+
+.task-input button:active {
+    transform: scale(0.97);
+}
+
+
+/* --------------------------------------------------------------------------------------------- */
+
+
+/* أزرار المهمة */
+.task-actions {
+    display: flex;
+    gap: 6px;
+    filter: var(--task-action);
+}
+
+.task-actions button {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: var(--radius-sm);
+    transition: 0.2s;
+}
+
+.task-actions button:hover {
+    background: var(--overlay-hover);
+    transform: translateY(-1px);
+}
+
+.task-actions button:active {
+    transform: translateY(0) scale(0.94);
+}

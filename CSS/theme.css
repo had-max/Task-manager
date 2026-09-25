@@ -1,0 +1,21 @@
+.theme-toggle {
+    padding: 8px 10px;
+    background: var(--card);
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: 0.3s;
+    user-select: none;
+}
+
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
